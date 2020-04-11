@@ -13,6 +13,7 @@ Développé et tester sur un système connecté au même réseau local que le d�
 	La variable globale 'URL' doit être modifiée pour accueillir l'addresse locale de votre décodeur.
 	
 Arguments :
+	
 	-h ou --help :
 		Optionnel.
 		Permet d'afficher cette docstring.
