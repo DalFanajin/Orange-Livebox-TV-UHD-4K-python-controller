@@ -50,14 +50,14 @@ Développé et tester sur un système connecté au même réseau local que le d�
 		Correspond au 'code télécommande' du signal que l'on souhaite envoyer au décodeur TV.
 		
 		Valeurs connues possibles :
-			[Voir la liste des keys : le code donné à l'option peut être la valeur de la colonne CODE_INT ou CODE_STR.](https://github.com/DalFanajin/Orange-Livebox-TV-UHD-4K-python-controller/blob/master/keys.md)
+[`Voir la liste des keys : le code donné à l'option peut être la valeur de la colonne CODE_INT ou CODE_STR.`](https://github.com/DalFanajin/Orange-Livebox-TV-UHD-4K-python-controller/blob/master/keys.md)
 	
 	-e ou --epg_id :
 		Obligatoire si -o ou --operation est égal à '9'.
 		Correspond au code EPG de la chaîne que le décodeur TV doit afficher.
 		
 		Valeurs connues possibles :
-			[Voir la liste des epg_ids : le code donné à l'option peut être la valeur de n'importe quelle colonne.](https://github.com/DalFanajin/Orange-Livebox-TV-UHD-4K-python-controller/blob/master/epg_ids.md)
+[`Voir la liste des epg_ids : le code donné à l'option peut être la valeur de n'importe quelle colonne.``](https://github.com/DalFanajin/Orange-Livebox-TV-UHD-4K-python-controller/blob/master/epg_ids.md)
 		
 
 Un grand merci à tous les contributeurs du topic à cette addresse :
