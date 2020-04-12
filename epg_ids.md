@@ -1,0 +1,218 @@
+# Liste des IDs EPG des chaines de la TV Orange au 12/04/2020
+
+Les valeurs ont été trouvées en bruteforcant tous les codes de -1 à 11000 le 12/04/2020.
+Certaines chaines sont manquantes, d'autres apparaissent en double, mais la majorité est bien présente.
+
+|	N° Chaine	|	EPG_ID	|	Nom Chaine	|
+|	1	|	192	|	TF1	|
+|	2	|	4	|	FRANCE 2	|
+|	3	|	80	|	FRANCE 3	|
+|	3	|	249	|	FRANCE 3	|
+|	3	|	304	|	FRANCE 3	|
+|	3	|	306	|	FRANCE 3	|
+|	3	|	308	|	FRANCE 3	|
+|	3	|	313	|	FRANCE 3	|
+|	3	|	634	|	FRANCE 3	|
+|	3	|	635	|	FRANCE 3	|
+|	3	|	636	|	FRANCE 3	|
+|	3	|	637	|	FRANCE 3	|
+|	3	|	638	|	FRANCE 3	|
+|	3	|	639	|	FRANCE 3	|
+|	3	|	640	|	FRANCE 3	|
+|	3	|	641	|	FRANCE 3	|
+|	3	|	642	|	FRANCE 3	|
+|	3	|	643	|	FRANCE 3	|
+|	3	|	644	|	FRANCE 3	|
+|	3	|	645	|	FRANCE 3	|
+|	3	|	646	|	FRANCE 3	|
+|	3	|	647	|	FRANCE 3	|
+|	3	|	648	|	FRANCE 3	|
+|	3	|	649	|	FRANCE 3	|
+|	3	|	650	|	FRANCE 3	|
+|	3	|	651	|	FRANCE 3	|
+|	3	|	655	|	FRANCE 3	|
+|	4	|	34	|	CANAL+	|
+|	5	|	47	|	FRANCE 5	|
+|	6	|	118	|	M6	|
+|	7	|	111	|	ARTE	|
+|	8	|	445	|	C8	|
+|	9	|	119	|	W9	|
+|	10	|	195	|	TMC	|
+|	11	|	446	|	TFX	|
+|	12	|	444	|	NRJ12	|
+|	13	|	234	|	LCP/PS	|
+|	14	|	78	|	FRANCE 4	|
+|	15	|	481	|	BFM TV	|
+|	16	|	226	|	CNEWS	|
+|	17	|	458	|	CSTAR	|
+|	18	|	482	|	GULLI	|
+|	19	|	160	|	FRANCE O	|
+|	20	|	1404	|	TF1 SERIES FILMS	|
+|	21	|	1401	|	LA CHAINE L'EQUIPE	|
+|	22	|	1403	|	6TER	|
+|	23	|	1402	|	RMC STORY	|
+|	24	|	1400	|	RMC DECOUVERTE	|
+|	25	|	1399	|	CHERIE 25	|
+|	26	|	112	|	LCI	|
+|	27	|	2111	|	FRANCEINFO:	|
+|	31	|	1061	|	A la maison	|
+|	34	|	205	|	TV5MONDE	|
+|	35	|	191	|	TEVA	|
+|	36	|	145	|	PARIS PREMIERE	|
+|	37	|	115	|	RTL9	|
+|	38	|	225	|	TV BREIZH	|
+|	40	|	33	|	C+ CINEMA	|
+|	41	|	35	|	C+ SPORT	|
+|	42	|	1563	|	C+ SERIES	|
+|	43	|	657	|	C+ FAMILY	|
+|	44	|	30	|	C+ DECALE	|
+|	45	|	1290	|	BEIN SPORTS 1	|
+|	46	|	1304	|	BEIN SPORTS 2	|
+|	47	|	1335	|	BEIN SPORTS 3	|
+|	50	|	730	|	OCS MAX	|
+|	51	|	733	|	OCS CITY, génération HBO	|
+|	52	|	732	|	OCS CHOC	|
+|	53	|	734	|	OCS GEANTS	|
+|	56	|	1562	|	PARAMOUNT CHANNEL	|
+|	57	|	2072	|	PARAMOUNT CHANNEL DECALE	|
+|	58	|	10	|	ACTION	|
+|	59	|	282	|	CINE+ PREMIER	|
+|	60	|	284	|	CINE+ FRISSON	|
+|	61	|	283	|	CINE+ EMOTION	|
+|	62	|	401	|	CINE+ FAMIZ	|
+|	63	|	285	|	CINE+ CLUB	|
+|	64	|	287	|	CINE+ CLASSIC	|
+|	66	|	1190	|	EUROCHANNEL	|
+|	71	|	1960	|	BET	|
+|	72	|	5	|	AB1	|
+|	73	|	121	|	MCM	|
+|	74	|	2441	|	TF1 +1	|
+|	75	|	2752	|	COMEDY CENTRAL	|
+|	76	|	87	|	GAME ONE	|
+|	77	|	1167	|	GAME ONE +1	|
+|	78	|	54	|	COMEDIE+	|
+|	79	|	2326	|	POLAR+	|
+|	80	|	2334	|	WARNER TV	|
+|	81	|	49	|	SERIE CLUB	|
+|	82	|	128	|	MTV	|
+|	84	|	1408	|	NON STOP PEOPLE	|
+|	85	|	1832	|	NOVELAS TV	|
+|	88	|	2803	|	TV PITCHOUN	|
+|	92	|	928	|	BOOMERANG +1	|
+|	93	|	924	|	BONG	|
+|	94	|	229	|	TIJI	|
+|	95	|	32	|	CANAL J	|
+|	97	|	344	|	PIWI+	|
+|	98	|	197	|	TELETOON+	|
+|	99	|	293	|	TELETOON+1	|
+|	100	|	58	|	DISNEY CHANNEL	|
+|	101	|	299	|	DISNEY CHANNEL+1	|
+|	102	|	300	|	DISNEY JUNIOR	|
+|	103	|	36	|	CARTOON NETWORK	|
+|	104	|	888	|	NICKELODEON JUNIOR	|
+|	106	|	473	|	NICKELODEON	|
+|	107	|	2065	|	NICKELODEON+1	|
+|	108	|	1746	|	NICKELODEON TEEN	|
+|	115	|	2094	|	ULTRA NATURE UHD	|
+|	116	|	12	|	ANIMAUX	|
+|	117	|	2037	|	CRIME DISTRICT	|
+|	118	|	38	|	CHASSE PECHE	|
+|	119	|	1776	|	TREK	|
+|	121	|	7	|	TOUTE L'HISTOIRE	|
+|	122	|	88	|	HISTOIRE TV	|
+|	123	|	451	|	USHUAIA TV	|
+|	124	|	829	|	MY ZEN TV	|
+|	125	|	63	|	SCIENCE & VIE TV	|
+|	129	|	508	|	NATIONAL GEOGRAPHIC	|
+|	130	|	719	|	NATIONAL GEOGRAPHIC WILD	|
+|	131	|	212	|	VOYAGE	|
+|	132	|	147	|	PLANETE+	|
+|	133	|	662	|	PLANETE+ CI	|
+|	134	|	402	|	PLANETE+ Aventure - Expérience	|
+|	136	|	1072	|	MUSEUM	|
+|	140	|	563	|	GINX	|
+|	141	|	2942	|	01TV, votre vie numérique	|
+|	142	|	2353	|	ES1	|
+|	144	|	2442	|	TMC +1	|
+|	145	|	6	|	MANGAS	|
+|	146	|	2040	|	TOONAMI	|
+|	147	|	1585	|	J-ONE	|
+|	148	|	2171	|	VICE TV	|
+|	149	|	2781	|	CLIQUE TV	|
+|	151	|	605	|	NRJ HITS	|
+|	152	|	2321	|	MELODY d'AFRIQUE	|
+|	155	|	1989	|	CLUBBING TV	|
+|	156	|	2153	|	OKLM TV	|
+|	157	|	453	|	M6MUSIC	|
+|	160	|	265	|	MELODY	|
+|	163	|	2006	|	MTV HITS	|
+|	166	|	2958	|	OLYMPIA TV	|
+|	167	|	125	|	MEZZO	|
+|	168	|	907	|	MEZZO LIVE HD	|
+|	169	|	1353	|	STINGRAY CLASSICA	|
+|	173	|	64	|	EQUIDIA	|
+|	174	|	2837	|	SPORT EN FRANCE	|
+|	179	|	1336	|	BEIN SPORTS MAX 4	|
+|	180	|	1337	|	BEIN SPORTS MAX 5	|
+|	181	|	1338	|	BEIN SPORTS MAX 6	|
+|	182	|	1339	|	BEIN SPORTS MAX 7	|
+|	183	|	1340	|	BEIN SPORTS MAX 8	|
+|	184	|	1341	|	BEIN SPORTS MAX 9	|
+|	185	|	1342	|	BEIN SPORTS MAX 10	|
+|	186	|	15	|	AUTOMOTO, la chaîne	|
+|	189	|	1166	|	GOLF CHANNEL	|
+|	214	|	1996	|	FASHIONTV	|
+|	215	|	531	|	LUXE TV	|
+|	219	|	57	|	DEMAIN	|
+|	220	|	110	|	KTO	|
+|	225	|	992	|	LCP 100%	|
+|	227	|	529	|	FRANCE 24 FRANCAIS	|
+|	228	|	1073	|	BFM BUSINESS	|
+|	229	|	140	|	EURONEWS Français	|
+|	232	|	671	|	FRANCE 24 ANGLAIS	|
+|	234	|	53	|	CNN	|
+|	235	|	51	|	CNBC	|
+|	236	|	410	|	BLOOMBERG EUROPE	|
+|	237	|	19	|	BBC WORLD NEWS	|
+|	238	|	525	|	AL JAZEERA ANGLAIS	|
+|	243	|	781	|	I24NEWS	|
+|	244	|	830	|	NHK WORLD - JAPAN	|
+|	245	|	61	|	DEUTSCHE WELLE	|
+|	271	|	1662	|	COLMAX TV	|
+|	272	|	1711	|	HUSTLER HD	|
+|	273	|	218	|	XXL	|
+|	274	|	560	|	DORCEL TV	|
+|	275	|	1474	|	DORCEL XXX	|
+|	277	|	837	|	PENTHOUSE GOLD	|
+|	278	|	1592	|	PENTHOUSE QUICKIES	|
+|	279	|	1468	|	PENTHOUSE BLACK	|
+|	284	|	406	|	PINK X	|
+|	285	|	683	|	MAN-X	|
+|	401	|	2293	|	A+ KIDS	|
+|	403	|	185	|	TCM CINEMA VO	|
+|	407	|	321	|	BOOMERANG (VO)	|
+|	408	|	18	|	FOXNEWS	|
+|	420	|	13	|	RTL NITRO	|
+|	420	|	2311	|	RTL NITRO	|
+|	422	|	219	|	ZDF	|
+|	423	|	973	|	ZDF_NEO	|
+|	424	|	966	|	RTL 2	|
+|	425	|	971	|	VOX	|
+|	427	|	964	|	PROSIEBEN	|
+|	428	|	1854	|	SUPER RTL	|
+|	429	|	982	|	KIKA	|
+|	431	|	960	|	3SAT	|
+|	432	|	979	|	ONE	|
+|	433	|	208	|	TVE INTERNACIONAL	|
+|	452	|	2046	|	CANAL Q	|
+|	455	|	169	|	RTPI	|
+|	460	|	156	|	RAI UNO	|
+|	461	|	154	|	RAI DUE	|
+|	462	|	155	|	RAI TRE	|
+|	465	|	1129	|	RAI NEWS 24	|
+|	499	|	2000	|	THE ISRAELI NETWORK	|
+|	521	|	340	|	2M MONDE	|
+|	589	|	1133	|	VOX AFRICA	|
+|	608	|	1461	|	NOLLYWOOD TV	|
+|	611	|	984	|	EQUINOXE	|
+|	612	|	1466	|	B-ONE	|
