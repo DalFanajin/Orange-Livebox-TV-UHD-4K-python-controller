@@ -3,15 +3,18 @@ Ce module permet de contrôler le décodeur TV orange via la ligne de commande U
 Il nécessite les modules suivants : requests, sys, getopt
 
 Développé et testé pour le décodeur TV UHD 4K Orange :
+
 	Modèle : Livebox Fibre
 	Version de firmware : 1.12.16
 	Version de firmware Orange : g0-f-fr)
 	
 Développé et tester sur un système connecté au même réseau local que le décodeur TV :
+
 	Dans cet exemple, l'adresse IP de mon décodeur est fixe et son addresse locale est 192.168.1.12
 	La variable globale 'URL' doit être modifiée pour accueillir l'addresse locale de votre décodeur.
 	
 Options :
+
 	-h ou --help :
 		Optionnel.
 		Sans argument.
