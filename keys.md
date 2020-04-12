@@ -1,7 +1,7 @@
 # Liste des IDs KEY permettant de simuler un appui sur une touche de la télécommande du décodeur TV UHD 4K Orange au 12/04/2020
 
 Les valeurs ont été trouvées en bruteforcant tous les codes de -1 à 1000 le 12/04/2020.
-Tous les boutons de la télécommande sont là, il y en a même deux inédits : le programme TV et le retour au direct.
+Tous les boutons de la télécommande sont là, il y a même plusieurs inédits : notamment le programme TV et le retour au direct.
 
 CODE_INT | CODE_STR | Description | Commentaire
 --- | --- | --- | ---
