@@ -16,17 +16,17 @@ Développé et tester sur un système connecté au même réseau local que le d�
 	
 ## Options :
 
-*-h ou --help :
+* -h ou --help :
    Optionnel.
    Sans argument.
    Permet d'afficher cette docstring.
 		
-*-v ou --verbose :
+* -v ou --verbose :
 		Optionnel.
 		Sans argument.
 		Permet d'afficher les informations écrites dans la console par la méthode 'printVerbose', utilisée pour afficher les informations de déroulement du programme.
 		
-*-o ou --operation :
+* -o ou --operation :
    Obligatoire.
    Spécifie l'instruction à envoyer au décodeur TV.
    
@@ -36,7 +36,7 @@ Développé et tester sur un système connecté au même réseau local que le d�
    |9|permet de se rendre sur une chaîne précise en indiquant un code EPG (Electronic Program Guide) en indiquant l'epg_id (-e ou --epg_id)|
    |1|permet de simuler l'appui d'une touche sur la télécommande en indiquant le mode (-m ou --mode) et la key (-k ou --key)|
 			
-*-m ou --mode :
+* -m ou --mode :
    Obligatoire si -o ou --operation est égal à '1'.
    Correspond au mode d'appui du bouton correspondant à la touche de la télécommande.
    
@@ -45,14 +45,14 @@ Développé et tester sur un système connecté au même réseau local que le d�
    |1|simule un appui sur la touche de la télécommande sans relache du bouton (keyDown)|
    |2|simule une relache du bouton de la touche de la télécommande (keyUp)|
    
-*-k ou --key :
+* -k ou --key :
    Obligatoire si -o ou --operation est égal à '1'.
    Correspond au 'code télécommande' du signal que l'on souhaite envoyer au décodeur TV.
    
    Valeurs connues possibles :
    [Voir la liste des keys : le code donné à l'option peut être la valeur de la colonne CODE_INT ou CODE_STR.](https://github.com/DalFanajin/Orange-Livebox-TV-UHD-4K-python-controller/blob/master/keys.md)
 	
-*-e ou --epg_id :
+* -e ou --epg_id :
    Obligatoire si -o ou --operation est égal à '9'.
    Correspond au code EPG de la chaîne que le décodeur TV doit afficher.
    
