@@ -100,7 +100,17 @@ def explore_epg_ids():
 			else :
 				loop = False
 				
+
+def trySendingTwoDigitsInARow():
+	PARAMS = {'operation':1, 'key':519, 'mode':1} 
+	requests.get(url = URL, params = PARAMS)
 	
+	PARAMS = {'operation':1, 'key':512, 'mode':0} 
+	requests.get(url = URL, params = PARAMS)
+	
+	PARAMS = {'operation':1, 'key':519, 'mode':2} 
+	requests.get(url = URL, params = PARAMS)
+
 def getFullResult(data):
 	resultCode = data['result']['responseCode'] 
 	resultMessage = data['result']['message'] 
@@ -112,4 +122,4 @@ def waitForUser(text):
 	return input(text)
 	
 if __name__ == "__main__":
-	fast_explore_simple_keys_except_list()
+	trySendingTwoDigitsInARow()

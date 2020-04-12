@@ -1,6 +1,6 @@
 """
 Ce module permet de contrôler le décodeur TV orange via la ligne de commande Unix d'un système.
-Il nécessite les modules suivants : requests, sys, getopt
+Il nécessite les modules suivants : requests, sys, getopt, json
 
 Développé et testé pour le décodeur TV UHD 4K Orange :
 
@@ -30,18 +30,18 @@ Options :
 		Spécifie l'instruction à envoyer au décodeur TV.
 		
 		Valeurs possibles :
-			[10] 	: affiche les informations système et l'état actuel du décodeur TV.
-			[9]		: permet de se rendre sur une chaîne précise en indiquant un code EPG (Electronic Program Guide) en indiquant l'epg_id (-e ou --epg_id).
-			[1]  	: permet de simuler l'appui d'une touche sur la télécommande en indiquant le mode (-m ou --mode) et la key (-k ou --key).
+			10 	: affiche les informations système et l'état actuel du décodeur TV.
+			9	: permet de se rendre sur une chaîne précise en indiquant un code EPG (Electronic Program Guide) en indiquant l'epg_id (-e ou --epg_id).
+			1  	: permet de simuler l'appui d'une touche sur la télécommande en indiquant le mode (-m ou --mode) et la key (-k ou --key).
 			
 	-m ou --mode :
 		Obligatoire si -o ou --operation est égal à '1'.
 		Correspond au mode d'appui du bouton correspondant à la touche de la télécommande.
 		
 		Valeurs possibles :
-			[0] : simule un appui court sur la touche de la télécommande (keyDown + keyUp)
-			[1] : simule un appui sur la touche de la télécommande sans relache du bouton (keyDown)
-			[2] : simule une relache du bouton de la touche de la télécommande (keyUp)
+			0 : simule un appui court sur la touche de la télécommande (keyDown + keyUp)
+			1 : simule un appui sur la touche de la télécommande sans relache du bouton (keyDown)
+			2 : simule une relache du bouton de la touche de la télécommande (keyUp)
 		
 	-k ou --key :
 		Obligatoire si -o ou --operation est égal à '1'.
@@ -71,38 +71,56 @@ This decoder is a french product, so I didn't translate this docstring in englis
 """
 
 # importing the requests library 
-import requests, sys, getopt
+import requests, sys, getopt, json
 
 # initialisation de la 
 VERBOSE = False
 
 # api-endpoint 
 URL = "http://192.168.1.12:8080/remoteControl/cmd"
+KEYS_FILE = "keys.json"
+EPG_IDS_FILE = "epg_ids.json"
+
 
 def main(argv):	
 	opts, args = checkArgs(argv)
 	
-	operation, key, mode = getFlagsAndValues(opts)
-	
 	checkIfArgsAreEmpty(args)
 	
+	operation, key, mode, epg_id = getFlagsAndValues(opts)
+	
+	result = createAndSendRequest(operation, key, mode, epg_id)
+	
+	resultCode, resultMessage, resultData = getFullResult(result)
+	
+	with open('result.json', 'w') as outfile:
+		json.dump(result, outfile)
+		
+	sys.exit(int(resultCode))
+	
+def createAndSendRequest(operation,key,mode,epg_id):
 	# parametres d'url
-	PARAMS = {'operation':operation, 'key':key, 'mode':mode} 
-	
+	if operation == "1":
+		PARAMS = {'operation':operation,'key':translateArg(key,KEYS_FILE),'mode':mode} 
+	elif operation == "9":
+		PARAMS = {'operation':operation, 'epg_id':translateArg(epg_id,EPG_IDS_FILE),'uui':1} 
+	elif operation == "10":
+		PARAMS = {'operation':operation} 
+	else :
+		printError("L'opération (-o ou --operation) doit être '1', '9' ou '10'.  Utilisez -h ou --help pour obtenir plus d'informations.")
+		sys.exit('Argument(s) invalide(s)')
+		
 	# sending get request and saving the response as response object 
-	r = requests.get(url = URL, params = PARAMS)
-	
-	getFullResult(r.json())
-	
-def createAndSendRequest(operation,mode,key,epg_id):
-	
-	
+	return requests.get(url = URL, params = PARAMS).json()
 
 def getFullResult(data):
 	resultCode = data['result']['responseCode'] 
 	resultMessage = data['result']['message'] 
 	resultData = data['result']['data'] 
+	
 	printVerbose("Code réponse:%s\nMessage:%s\nDonnées:%s"%(resultCode, resultMessage,resultData)) 
+	
+	return resultCode, resultMessage, resultData
 	
 def checkArgs(argv):
 	global VERBOSE
@@ -113,16 +131,24 @@ def checkArgs(argv):
 		for flag, value in opts:
 			if flag in ('-v', '--verbose'):
 				VERBOSE = True
+				printVerbose("Verbose ON")
 		
 		return opts, args
 		
 	except getopt.GetoptError:
-		printError('Argument(s) invalide(s)')
-		exitTvOrange()
+		printError("Argument(s) invalide(s). Utilisez -h ou --help pour obtenir plus d'informations.")
+		sys.exit('Argument(s) invalide(s)')
 		
 def getFlagsAndValues(opts):
+	
+	operation = ''
+	key = ''
+	mode = ''
+	epg_id = ''
+
 	for flag, value in opts:
-		printVerbose("%s:%s"%(flag,value))
+		if flag not in ('-v','--verbose'):
+			printVerbose("%s:%s"%(flag,value))
 		
 		if flag in ('-o', '--operation'):
 			operation = value
@@ -137,18 +163,21 @@ def getFlagsAndValues(opts):
 			epg_id = value
 		
 		elif flag in ('-h', '--help'):
-			exitTvOrange()
+			usage()
+			sys.exit(0)
 		
-	return '01','115','0'
+	return operation, key, mode, epg_id
+	
+def translateArg(arg,file):
+	with open(file) as json_file:
+		data = json.load(json_file)
+	
+	return data[arg]
 	
 def checkIfArgsAreEmpty(args):
 	if len(args) != 0:
-		printError('Argument(s) invalide(s)')
-		exitTvOrange()
-
-def exitTvOrange():
-	usage()
-	sys.exit(2)
+		printError("Argument(s) invalide(s). Utilisez -h ou --help pour obtenir plus d'informations.")
+		sys.exit('Argument(s) invalide(s)')
 	
 def usage():
 	print(__doc__)
