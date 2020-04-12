@@ -38,7 +38,7 @@ def explore_keys():
 	
 		getFullResult(r.json())
 		
-		waitForUser()
+		waitForUser("Press enter to continue")
 		
 		print("On lance l'opération 1, appui long (200ms), touche %s"%key)
 		print("On appuie")
@@ -57,39 +57,59 @@ def explore_keys():
 	
 		getFullResult(r.json())
 		
-		waitForUser()
+		waitForUser("Press enter to continue")
+		
+def fast_explore_simple_keys_except_list():
+	notin = [116,512,513,514,515,516,517,518,519,520,521,402,403,115,114,113,103,108,105,106,352,158,139,164,168,159,167,393,1,28,72,75,77,80,166,207,208,365,407,408,412,529,582]
+	for key in range(1,1001):
+		if key not in notin :
+			print("On lance l'opération 1, appui simple, touche %s"%key)
+			PARAMS = {'operation':1, 'key':key, 'mode':0} 
+			
+			r = requests.get(url = URL, params = PARAMS)
+		
+			getFullResult(r.json())
+		
 		
 def explore_modes():
-	for mode in range(1,1000):
+	for mode in range(1,1001):
 		print("On lance l'opération %s"%mode)
 		PARAMS = {'operation':mode} 
 		
 		r = requests.get(url = URL, params = PARAMS)
 	
-		getFullResult(r.json())
-		
-		waitForUser()
+		if getFullResult(r.json()) == "ok":
+			waitForUser("Press enter to continue")
 
 def explore_epg_ids():
-	for epg_id in range(1,9999999999):
+	#Bruteforcé jusqu'à 11000, à reprendre une nuit 
+	for epg_id in range(11000,9999999999):
 		epg_code = (10 - len(str(epg_id))) * '*' + str(epg_id)
 		print("On lance la chaine d'EPG %s"%epg_code)
 		PARAMS = {'operation':9, 'epg_id':epg_id,'uui':1} 
 		
-		r = requests.get(url = URL, params = PARAMS)
-	
-		getFullResult(r.json())
+		loop = True
 		
-		waitForUser()
+		while loop:
+			r = requests.get(url = URL, params = PARAMS)
+		
+			if getFullResult(r.json()) == "ok":
+				if waitForUser("Press enter to continue, some other key to try again") == '':
+					loop = False
+			
+			else :
+				loop = False
+				
 	
 def getFullResult(data):
 	resultCode = data['result']['responseCode'] 
 	resultMessage = data['result']['message'] 
 	resultData = data['result']['data'] 
 	print("Code réponse:%s\nMessage:%s\nDonnées:%s"%(resultCode, resultMessage,resultData)) 
+	return resultMessage
 
-def waitForUser():
-	input("Press enter to continue")
+def waitForUser(text):
+	return input(text)
 	
 if __name__ == "__main__":
-	explore_epg_ids()
+	fast_explore_simple_keys_except_list()

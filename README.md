@@ -14,7 +14,7 @@ Développé et tester sur un système connecté au même réseau local que le d�
 	Dans cet exemple, l'adresse IP de mon décodeur est fixe et son addresse locale est 192.168.1.12
 	La variable globale 'URL' doit être modifiée pour accueillir l'addresse locale de votre décodeur.
 	
-Options :
+## Options :
 
 	-h ou --help :
 		Optionnel.
@@ -31,52 +31,26 @@ Options :
 		Spécifie l'instruction à envoyer au décodeur TV.
 		
 		Valeurs possibles :
-			[10] 	: affiche les informations système et l'état actuel du décodeur TV.
-			[9]		: permet de se rendre sur une chaîne précise en indiquant un code EPG (Electronic Program Guide) en indiquant l'epg_id (-e ou --epg_id).
-			[1]  	: permet de simuler l'appui d'une touche sur la télécommande en indiquant le mode (-m ou --mode) et la key (-k ou --key).
+			|Valeur|Description|
+			|10|affiche les informations système et l'état actuel du décodeur TV|
+			|9|permet de se rendre sur une chaîne précise en indiquant un code EPG (Electronic Program Guide) en indiquant l'epg_id (-e ou --epg_id)|
+			|1|permet de simuler l'appui d'une touche sur la télécommande en indiquant le mode (-m ou --mode) et la key (-k ou --key)|
 			
 	-m ou --mode :
 		Obligatoire si -o ou --operation est égal à '1'.
 		Correspond au mode d'appui du bouton correspondant à la touche de la télécommande.
 		
 		Valeurs possibles :
-			[0] : simule un appui court sur la touche de la télécommande (keyDown + keyUp)
-			[1] : simule un appui sur la touche de la télécommande sans relache du bouton (keyDown)
-			[2] : simule une relache du bouton de la touche de la télécommande (keyUp)
+			|0|simule un appui court sur la touche de la télécommande (keyDown + keyUp)|
+			|1|simule un appui sur la touche de la télécommande sans relache du bouton (keyDown)|
+			|2|simule une relache du bouton de la touche de la télécommande (keyUp)|
 		
 	-k ou --key :
 		Obligatoire si -o ou --operation est égal à '1'.
 		Correspond au 'code télécommande' du signal que l'on souhaite envoyer au décodeur TV.
 		
 		Valeurs connues possibles :
-			[116] ou [POWER]: Simule la touche POWER : allume ou éteint le décodeur TV en fonction de son état
-			[512] ou [0] 	: Simule la touche 0 de la télécommande
-			[513] ou [1] 	: Simule la touche 1 de la télécommande
-			[514] ou [2] 	: Simule la touche 2 de la télécommande
-			[515] ou [3] 	: Simule la touche 3 de la télécommande
-			[516] ou [4] 	: Simule la touche 4 de la télécommande
-			[517] ou [5] 	: Simule la touche 5 de la télécommande
-			[518] ou [6] 	: Simule la touche 6 de la télécommande
-			[519] ou [7] 	: Simule la touche 7 de la télécommande
-			[520] ou [8] 	: Simule la touche 8 de la télécommande
-			[521] ou [9] 	: Simule la touche 9 de la télécommande
-			[402] ou [CH+] 	: Simule la touche CH+ de la télécommande
-			[403] ou [CH-] 	: Simule la touche CH- de la télécommande
-			[115] ou [VOL+] : Simule la touche VOL+ de la télécommande
-			[114] ou [VOL-] : Simule la touche VOL- de la télécommande
-			[113] ou [MUTE] : Simule la touche MUTE de la télécommande
-			[103] ou [UP] 	: Simule la touche HAUT de la télécommande
-			[108] ou [DOWN] : Simule la touche BAS de la télécommande
-			[105] ou [LEFT] : Simule la touche GAUCHE de la télécommande
-			[116] ou [RIGHT]: Simule la touche DROITE de la télécommande
-			[352] ou [OK] 	: Simule la touche OK de la télécommande
-			[158] ou [BACK] : Simule la touche ARRIERE de la télécommande
-			[139] ou [MENU] : Simule la touche MENU de la télécommande
-			[164] ou [PAUSE]: Simule la touche PLAY/PAUSE de la télécommande
-			[168] ou [FBWD] : Simule la touche RETOUR ARRIERE de la télécommande
-			[159] ou [FFWD] : Simule la touche AVANCE RAPIDE de la télécommande
-			[167] ou [REC] 	: Simule la touche ENREGISTRER de la télécommande
-			[393] ou [VOD] 	: Simule la touche VOD de la télécommande
+			
 	
 	-e ou --epg_id :
 		Obligatoire si -o ou --operation est égal à '9'.
