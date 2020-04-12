@@ -31,19 +31,20 @@ Développé et tester sur un système connecté au même réseau local que le d�
    Spécifie l'instruction à envoyer au décodeur TV.
    
    Valeurs possibles :
-   |Valeur|Description|
-   |10|affiche les informations système et l'état actuel du décodeur TV|
-   |9|permet de se rendre sur une chaîne précise en indiquant un code EPG (Electronic Program Guide) en indiquant l'epg_id (-e ou --epg_id)|
-   |1|permet de simuler l'appui d'une touche sur la télécommande en indiquant le mode (-m ou --mode) et la key (-k ou --key)|
+   Valeur | Description
+   10 | affiche les informations système et l'état actuel du décodeur TV, enregistre les informations dans result.json
+   9 | permet de se rendre sur une chaîne précise en indiquant un code EPG (Electronic Program Guide) en indiquant l'epg_id (-e ou --epg_id)
+   1 | permet de simuler l'appui d'une touche sur la télécommande en indiquant le mode (-m ou --mode) et la key (-k ou --key)
 			
 * -m ou --mode :
    Obligatoire si -o ou --operation est égal à '1'.
    Correspond au mode d'appui du bouton correspondant à la touche de la télécommande.
    
    Valeurs possibles :
-   |0|simule un appui court sur la touche de la télécommande (keyDown + keyUp)|
-   |1|simule un appui sur la touche de la télécommande sans relache du bouton (keyDown)|
-   |2|simule une relache du bouton de la touche de la télécommande (keyUp)|
+   Valeur | Description
+   0 | simule un appui court sur la touche de la télécommande (keyDown + keyUp)
+   1 | simule un appui sur la touche de la télécommande sans relache du bouton (keyDown)
+   2 | simule une relache du bouton de la touche de la télécommande (keyUp)
    
 * -k ou --key :
    Obligatoire si -o ou --operation est égal à '1'.
@@ -58,14 +59,31 @@ Développé et tester sur un système connecté au même réseau local que le d�
    
    Valeurs connues possibles :
    [Voir la liste des epg_ids : le code donné à l'option peut être la valeur de n'importe quelle colonne.](https://github.com/DalFanajin/Orange-Livebox-TV-UHD-4K-python-controller/blob/master/epg_ids.md)
-		
+   
+## Exemples
+* Obtenir l'état du décodeur et l'enregistre dans result.json
+`python3 tvOrange.py -o 10`
+
+* Demander au décodeur TV la chaîne TF1 :
+`python3 tvOrange.py -o 9 -e TF1`
+
+* Appuyer une fois sur la touche On/Off de la télécommande :
+`python3 tvOrange.py -o 1 -m 0 -k POWER`
+
+* Enfoncer la touche Volume + de la télécommande :
+`python3 tvOrange.py -o 1 -m 1 -k VOL+`
+
+* Relacher la touche Volume + de la télécommande :
+`python3 tvOrange.py -o 1 -m 2 -k VOL+`
+
+## Concernant l'outil
 
 [Un grand merci à tous les contributeurs du topic à cette addresse.](https://communaute.orange.fr/t5/TV-par-ADSL-et-Fibre/API-pour-commander-le-decodeur-TV-depusi-une-tablette/td-p/43443)
 
-Je suis loin d'être un expert des technologies utilisées par ce module : il peut présenter des erreurs, être incomplet, etc.
+Je suis loin d'être un expert des outils utilisés par ce module : il peut présenter des erreurs, être incomplet, etc.
 N'hésitez pas à le modifier, l'adapter, le partager, et l'utiliser quel que soit le contexte.
 
 [Je vous serais reconnaissant de me transmettre les éventuelles améliorations/corrections à y apporter sur le repository github.](https://github.com/DalFanajin/Orange-Livebox-TV-UHD-4K-python-controller)
 
-Etant donné que le décodeur est exclusivement français, je n'ai pas prévu de traduction anglaise pour cette docstring : si elle est nécessaire, n'hésitez pas à me solliciter.
-This decoder is a french product, so I didn't translate this docstring in english : do not hesitate to ask if you need a translation anyway.
+Etant donné que le décodeur est exclusivement français, je n'ai pas prévu de traduction anglaise les documentations associées : si elle est nécessaire, n'hésitez pas à me solliciter.
+This decoder is a french product, so I didn't translate documentation files in english : do not hesitate to ask if you need a translation anyway.
