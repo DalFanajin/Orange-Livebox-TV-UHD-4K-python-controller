@@ -32,6 +32,7 @@ Développé et tester sur un système connecté au même réseau local que le d�
    
    Valeurs possibles :
    Valeur | Description
+   --- | ---
    10 | affiche les informations système et l'état actuel du décodeur TV, enregistre les informations dans result.json
    9 | permet de se rendre sur une chaîne précise en indiquant un code EPG (Electronic Program Guide) en indiquant l'epg_id (-e ou --epg_id)
    1 | permet de simuler l'appui d'une touche sur la télécommande en indiquant le mode (-m ou --mode) et la key (-k ou --key)
@@ -42,6 +43,7 @@ Développé et tester sur un système connecté au même réseau local que le d�
    
    Valeurs possibles :
    Valeur | Description
+   --- | ---
    0 | simule un appui court sur la touche de la télécommande (keyDown + keyUp)
    1 | simule un appui sur la touche de la télécommande sans relache du bouton (keyDown)
    2 | simule une relache du bouton de la touche de la télécommande (keyUp)
